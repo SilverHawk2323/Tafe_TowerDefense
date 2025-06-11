@@ -33,6 +33,11 @@ public class Node : MonoBehaviour
         return heuristic;
     }
 
+    public float AddToHeuristic(float addition)
+    {
+        return heuristic + addition;
+    }
+
     public void ResetNode()
     {
         _pathWeight = float.PositiveInfinity;
