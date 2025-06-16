@@ -4,19 +4,25 @@ using UnityEngine;
 public class AttackTower : MonoBehaviour
 {
     public LayerMask nodeLayer;
+    List<Node> nodes = new List<Node>();
     //private List<Node> nodes = new List<Node>();
     private void Start()
     {
-        List<Node> nodes = new List<Node>();
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5f, Vector3.zero, nodeLayer);
-
+        
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 10f, Vector3.one, 1f, nodeLayer);
+        if(hits.Length > 0)
+        {
+            print(hits.Length);
+        }
         foreach (RaycastHit hit in hits)
         {
-            nodes.Add(hit.transform.GetComponent<Node>());
+            nodes.Add(hit.transform.gameObject.GetComponent<Node>());
         }
         foreach (Node node in nodes)
         {
-            node.AddToHeuristic(10f);
+            node.AddToHeuristic(200f);
+            print(node.pathHeuristicWeight);
+            GameManager.gm.UpdateEnemyPath();
         }
     }
 }

@@ -35,7 +35,7 @@ public class Node : MonoBehaviour
 
     public float AddToHeuristic(float addition)
     {
-        return heuristic + addition;
+        return pathHeuristicWeight + addition;
     }
 
     public void ResetNode()

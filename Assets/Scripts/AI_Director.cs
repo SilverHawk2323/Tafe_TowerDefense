@@ -6,15 +6,33 @@ using Debug = UnityEngine.Debug;
 
 public class AI_Director : MonoBehaviour
 {
-    public Dijkstra pathfinder;
-    public Dijkstra pathfinder2;
+    public Dijkstra aStar;
+    public Dijkstra dijkstra;
     public GridGenerator grid;
+    private Transform target;
+    private int wavepointIndex;
+    private List<Node> path = new List<Node>();
+    public float speed = 10f;
+    public Node goal;
+    public Node start;
+
+    private void Awake()
+    {
+
+
+        aStar = GameManager.gm.astar;
+        dijkstra = GameManager.gm.dijkstra;
+        grid = GameManager.gm.grid;
+        goal = GameManager.gm.goal;
+        start = GameManager.gm.start;
+
+    }
 
     private void Start()
     {
         //grid.GenerateGrid();
-        pathfinder.GetAllNodes();
-        pathfinder2.GetAllNodes();
+        aStar.GetAllNodes();
+        dijkstra.GetAllNodes();
 
         Node[] nodes = FindObjectsByType<Node>(FindObjectsSortMode.InstanceID);
         int startNode = nodes.Length - 1;
@@ -22,19 +40,47 @@ public class AI_Director : MonoBehaviour
 
         Stopwatch timer = new Stopwatch();
         timer.Start();
-        
 
-        List<Node> path = pathfinder.FindShortestPath(nodes[nodes.Length - 1], nodes[goalNode]);
+        path = aStar.FindShortestPath(start, goal);
+        target = path[0].transform;
 
         timer.Stop();
         Debug.Log("A* = " + timer.ElapsedMilliseconds);
-        pathfinder.DebugPath(path);
+        aStar.DebugPath(path);
         timer = new Stopwatch();
         timer.Start();
 
-        List<Node> path2 = pathfinder2.FindShortestPath(nodes[nodes.Length - 1], nodes[goalNode]);
+        List<Node> path2 = dijkstra.FindShortestPath(nodes[nodes.Length - 1], nodes[goalNode]);
         timer.Stop();
         Debug.Log("Dijkstra = " + timer.ElapsedMilliseconds);
-        pathfinder2.DebugPath(path2);
+        //Dijkstra.DebugPath(path2);
+    }
+
+    private void Update()
+    {
+        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+
+        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        {
+            GetNextWaypoint();
+        }
+    }
+
+    private void GetNextWaypoint()
+    {
+        if (wavepointIndex >= path.Count - 1)
+        {
+            GameManager.gm.RemoveEnemyFromList(this);
+            Destroy(gameObject);
+            return;
+        }
+        wavepointIndex++;
+        target = path[wavepointIndex].transform;
+    }
+
+    public void UpdatePath()
+    {
+        path = aStar.FindShortestPath(path[wavepointIndex], goal);
     }
 }
