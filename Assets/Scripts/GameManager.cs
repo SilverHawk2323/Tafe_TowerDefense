@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     private void SpawnEnemy()
     {
         GameObject newEnemy = Instantiate(enemy, spawnPosition.position, spawnPosition.rotation);
-        enemies.Add(newEnemy.GetComponent<AI_Director>());
+        enemies.Add(newEnemy.GetComponentInChildren<AI_Director>());
     }
 
     public void UpdateEnemyPath()

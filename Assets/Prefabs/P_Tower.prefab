@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2257014241889232736}
   - component: {fileID: 8972369290337486918}
+  - component: {fileID: 2042545270034730408}
   m_Layer: 0
   m_Name: AttackRadius
   m_TagString: Untagged
@@ -53,6 +54,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2042545270034730408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2869734924545556551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab655d386964c2438a51105fb3b8ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 2
+  currentAttackCooldown: 0
+  canAttack: 0
 --- !u!1 &5339157026541972769
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,13 @@ public class Node : MonoBehaviour
     private float _pathWeight = float.PositiveInfinity;
     public float PathWeightProperity
     {
-        get => _pathWeight;
+        get => _pathWeight + towerWeight;
         set => _pathWeight = value;
     }
 
     public Node PreviousNode { get; set; }
 
+    public float towerWeight = 0;
     private float heuristic;
     public float Heuristic 
     { 
@@ -27,21 +28,26 @@ public class Node : MonoBehaviour
         get => _pathWeight + heuristic;
     }
 
+  
+
     public float SetHeuristic(Vector3 goal)
     {
         heuristic = Vector3.Distance(transform.position, goal);
         return heuristic;
     }
 
-    public float AddToHeuristic(float addition)
+    public void AddToHeuristic(float addition)
     {
-        return pathHeuristicWeight + addition;
+        Debug.Log("add" + addition);
+        towerWeight += addition;
+        //return pathHeuristicWeight;
     }
 
     public void ResetNode()
     {
         _pathWeight = float.PositiveInfinity;
         PreviousNode = null;
+        //towerWeight = 0;
     }
 
     private void OnDrawGizmos()

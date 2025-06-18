@@ -22,8 +22,15 @@ public class TowerPlatform : MonoBehaviour
             Debug.Log("Can't build there");
             return;
         }
+        if (!BuildManager.instance.canBuild)
+        {
+            Debug.Log("Can't build yet");
+            return;
+        }
         GameObject towerToBuild = BuildManager.instance.GetTowerToBuild();
         currentTower = Instantiate(towerToBuild, transform.position, transform.rotation);
+        BuildManager.instance.buildCooldown = BuildManager.instance.maxCooldown;
+        BuildManager.instance.canBuild = false;
 
     }
 

@@ -20,8 +20,8 @@ public class AttackTower : MonoBehaviour
         }
         foreach (Node node in nodes)
         {
-            node.AddToHeuristic(200f);
-            print(node.pathHeuristicWeight);
+            node.AddToHeuristic(999999f);
+            //print(node.pathHeuristicWeight);
             GameManager.gm.UpdateEnemyPath();
         }
     }

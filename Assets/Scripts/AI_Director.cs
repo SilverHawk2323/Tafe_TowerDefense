@@ -81,6 +81,8 @@ public class AI_Director : MonoBehaviour
 
     public void UpdatePath()
     {
+        Debug.Log(wavepointIndex);
         path = aStar.FindShortestPath(path[wavepointIndex], goal);
+        wavepointIndex = 0;
     }
 }

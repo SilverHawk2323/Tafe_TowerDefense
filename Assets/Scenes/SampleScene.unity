@@ -154,6 +154,7 @@ MonoBehaviour:
   - {fileID: 1166319526}
   - {fileID: 964084424}
   - {fileID: 1342192073}
+  towerWeight: 0
 --- !u!4 &16116059
 Transform:
   m_ObjectHideFlags: 0
@@ -317,6 +318,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 5339157026541972769, guid: 9e35b1cf60279d448aa32cde0bb73f7c, type: 3}
+  buildCooldown: 0
+  maxCooldown: 5
+  canBuild: 0
+  timerText: {fileID: 1455391970}
 --- !u!114 &24588250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +394,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1695216566}
   - {fileID: 1060042802}
+  towerWeight: 0
 --- !u!4 &27688834
 Transform:
   m_ObjectHideFlags: 0
@@ -488,6 +494,7 @@ MonoBehaviour:
   - {fileID: 305939390}
   - {fileID: 2044852880}
   - {fileID: 1030071994}
+  towerWeight: 0
 --- !u!4 &44810239
 Transform:
   m_ObjectHideFlags: 0
@@ -586,6 +593,7 @@ MonoBehaviour:
   - {fileID: 2136972387}
   - {fileID: 1673536968}
   - {fileID: 603270893}
+  towerWeight: 0
 --- !u!4 &49303362
 Transform:
   m_ObjectHideFlags: 0
@@ -685,6 +693,7 @@ MonoBehaviour:
   - {fileID: 2088839382}
   - {fileID: 743115330}
   - {fileID: 1622325341}
+  towerWeight: 0
 --- !u!4 &59647276
 Transform:
   m_ObjectHideFlags: 0
@@ -783,6 +792,7 @@ MonoBehaviour:
   - {fileID: 1038652768}
   - {fileID: 806982466}
   - {fileID: 1636037712}
+  towerWeight: 0
 --- !u!4 &60026130
 Transform:
   m_ObjectHideFlags: 0
@@ -881,6 +891,7 @@ MonoBehaviour:
   - {fileID: 1673536968}
   - {fileID: 848947582}
   - {fileID: 720997628}
+  towerWeight: 0
 --- !u!4 &60935461
 Transform:
   m_ObjectHideFlags: 0
@@ -979,6 +990,7 @@ MonoBehaviour:
   - {fileID: 603270893}
   - {fileID: 1673536968}
   - {fileID: 720997628}
+  towerWeight: 0
 --- !u!4 &62755512
 Transform:
   m_ObjectHideFlags: 0
@@ -1078,6 +1090,7 @@ MonoBehaviour:
   - {fileID: 1846609800}
   - {fileID: 1422899178}
   - {fileID: 2016149830}
+  towerWeight: 0
 --- !u!4 &67968715
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,6 +1190,7 @@ MonoBehaviour:
   - {fileID: 589248366}
   - {fileID: 2114890916}
   - {fileID: 1588292516}
+  towerWeight: 0
 --- !u!4 &70342116
 Transform:
   m_ObjectHideFlags: 0
@@ -1275,6 +1289,7 @@ MonoBehaviour:
   - {fileID: 1373805939}
   - {fileID: 170231051}
   - {fileID: 525006231}
+  towerWeight: 0
 --- !u!4 &71947237
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,6 +1387,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 843384246}
   - {fileID: 764201092}
+  towerWeight: 0
 --- !u!4 &75647568
 Transform:
   m_ObjectHideFlags: 0
@@ -1471,6 +1487,7 @@ MonoBehaviour:
   - {fileID: 278701292}
   - {fileID: 249309597}
   - {fileID: 1510989199}
+  towerWeight: 0
 --- !u!4 &81065191
 Transform:
   m_ObjectHideFlags: 0
@@ -1570,6 +1587,7 @@ MonoBehaviour:
   - {fileID: 292658205}
   - {fileID: 1258701173}
   - {fileID: 1258162070}
+  towerWeight: 0
 --- !u!4 &81515515
 Transform:
   m_ObjectHideFlags: 0
@@ -1668,6 +1686,7 @@ MonoBehaviour:
   - {fileID: 1964345429}
   - {fileID: 1562151831}
   - {fileID: 228791670}
+  towerWeight: 0
 --- !u!4 &86055382
 Transform:
   m_ObjectHideFlags: 0
@@ -1771,6 +1790,7 @@ MonoBehaviour:
   - {fileID: 1986391263}
   - {fileID: 624895420}
   - {fileID: 834243422}
+  towerWeight: 0
 --- !u!4 &112485920
 Transform:
   m_ObjectHideFlags: 0
@@ -1869,6 +1889,7 @@ MonoBehaviour:
   - {fileID: 1089755151}
   - {fileID: 2084535367}
   - {fileID: 1429992941}
+  towerWeight: 0
 --- !u!4 &114533485
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,6 +1953,85 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &120342981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 120342984}
+  - component: {fileID: 120342983}
+  - component: {fileID: 120342982}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &120342982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120342981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
+--- !u!114 &120342983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120342981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &120342984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120342981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123991400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +2068,7 @@ MonoBehaviour:
   - {fileID: 2136972387}
   - {fileID: 603270893}
   - {fileID: 1164953832}
+  towerWeight: 0
 --- !u!4 &123991402
 Transform:
   m_ObjectHideFlags: 0
@@ -2076,6 +2177,7 @@ MonoBehaviour:
   - {fileID: 180848326}
   - {fileID: 1167758570}
   - {fileID: 370183062}
+  towerWeight: 0
 --- !u!4 &128303198
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,6 +2277,7 @@ MonoBehaviour:
   - {fileID: 1268896433}
   - {fileID: 1376735590}
   - {fileID: 2114890916}
+  towerWeight: 0
 --- !u!4 &131623351
 Transform:
   m_ObjectHideFlags: 0
@@ -2272,6 +2375,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 947164310}
   - {fileID: 740394347}
+  towerWeight: 0
 --- !u!4 &135545104
 Transform:
   m_ObjectHideFlags: 0
@@ -2371,6 +2475,7 @@ MonoBehaviour:
   - {fileID: 1662193223}
   - {fileID: 1125520296}
   - {fileID: 1872966166}
+  towerWeight: 0
 --- !u!4 &136637809
 Transform:
   m_ObjectHideFlags: 0
@@ -2549,6 +2654,7 @@ MonoBehaviour:
   - {fileID: 1258162070}
   - {fileID: 579468343}
   - {fileID: 71947236}
+  towerWeight: 0
 --- !u!4 &170231052
 Transform:
   m_ObjectHideFlags: 0
@@ -2648,6 +2754,7 @@ MonoBehaviour:
   - {fileID: 665007886}
   - {fileID: 1258162070}
   - {fileID: 743115330}
+  towerWeight: 0
 --- !u!4 &172379316
 Transform:
   m_ObjectHideFlags: 0
@@ -2745,6 +2852,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 2007920132}
   - {fileID: 1309609522}
+  towerWeight: 0
 --- !u!4 &173600348
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,6 +2952,7 @@ MonoBehaviour:
   - {fileID: 1030071994}
   - {fileID: 658325180}
   - {fileID: 240734159}
+  towerWeight: 0
 --- !u!4 &179163562
 Transform:
   m_ObjectHideFlags: 0
@@ -2942,6 +3051,7 @@ MonoBehaviour:
   - {fileID: 681030809}
   - {fileID: 777481709}
   - {fileID: 1375640173}
+  towerWeight: 0
 --- !u!4 &179260771
 Transform:
   m_ObjectHideFlags: 0
@@ -3041,6 +3151,7 @@ MonoBehaviour:
   - {fileID: 571523105}
   - {fileID: 128303197}
   - {fileID: 841328271}
+  towerWeight: 0
 --- !u!4 &180848327
 Transform:
   m_ObjectHideFlags: 0
@@ -3139,6 +3250,7 @@ MonoBehaviour:
   - {fileID: 370183062}
   - {fileID: 624895420}
   - {fileID: 1986391263}
+  towerWeight: 0
 --- !u!4 &183667235
 Transform:
   m_ObjectHideFlags: 0
@@ -3497,6 +3609,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1886710346}
   - {fileID: 1081544267}
+  towerWeight: 0
 --- !u!4 &202108063
 Transform:
   m_ObjectHideFlags: 0
@@ -3606,6 +3719,7 @@ MonoBehaviour:
   - {fileID: 86055381}
   - {fileID: 235540246}
   - {fileID: 687073590}
+  towerWeight: 0
 --- !u!4 &228791671
 Transform:
   m_ObjectHideFlags: 0
@@ -3704,6 +3818,7 @@ MonoBehaviour:
   - {fileID: 1863720181}
   - {fileID: 371920697}
   - {fileID: 758981249}
+  towerWeight: 0
 --- !u!4 &230691180
 Transform:
   m_ObjectHideFlags: 0
@@ -3807,6 +3922,7 @@ MonoBehaviour:
   - {fileID: 228791670}
   - {fileID: 1610230376}
   - {fileID: 1349887039}
+  towerWeight: 0
 --- !u!4 &235540247
 Transform:
   m_ObjectHideFlags: 0
@@ -3975,6 +4091,7 @@ MonoBehaviour:
   - {fileID: 179163561}
   - {fileID: 942623505}
   - {fileID: 1533771093}
+  towerWeight: 0
 --- !u!4 &240734160
 Transform:
   m_ObjectHideFlags: 0
@@ -4074,6 +4191,7 @@ MonoBehaviour:
   - {fileID: 1914371191}
   - {fileID: 1414126515}
   - {fileID: 426117330}
+  towerWeight: 0
 --- !u!4 &249011931
 Transform:
   m_ObjectHideFlags: 0
@@ -4173,6 +4291,7 @@ MonoBehaviour:
   - {fileID: 278295543}
   - {fileID: 1629171500}
   - {fileID: 1824995490}
+  towerWeight: 0
 --- !u!4 &249309598
 Transform:
   m_ObjectHideFlags: 0
@@ -4271,6 +4390,7 @@ MonoBehaviour:
   - {fileID: 1797762815}
   - {fileID: 1097148507}
   - {fileID: 323893145}
+  towerWeight: 0
 --- !u!4 &258154029
 Transform:
   m_ObjectHideFlags: 0
@@ -4369,6 +4489,7 @@ MonoBehaviour:
   - {fileID: 1183835040}
   - {fileID: 263006599}
   - {fileID: 2033070506}
+  towerWeight: 0
 --- !u!4 &260716568
 Transform:
   m_ObjectHideFlags: 0
@@ -4537,6 +4658,7 @@ MonoBehaviour:
   - {fileID: 532092167}
   - {fileID: 1588292516}
   - {fileID: 1135787929}
+  towerWeight: 0
 --- !u!4 &263006600
 Transform:
   m_ObjectHideFlags: 0
@@ -4704,6 +4826,7 @@ MonoBehaviour:
   - {fileID: 1918407433}
   - {fileID: 927722391}
   - {fileID: 2022843820}
+  towerWeight: 0
 --- !u!4 &267151120
 Transform:
   m_ObjectHideFlags: 0
@@ -4767,6 +4890,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &277322079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277322080}
+  m_Layer: 5
+  m_Name: GUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &277322080
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277322079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1962968156}
+  m_Father: {fileID: 785983147}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &278295542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4962,7 @@ MonoBehaviour:
   - {fileID: 512607397}
   - {fileID: 1922731648}
   - {fileID: 249309597}
+  towerWeight: 0
 --- !u!4 &278295544
 Transform:
   m_ObjectHideFlags: 0
@@ -4901,6 +5061,7 @@ MonoBehaviour:
   - {fileID: 329487895}
   - {fileID: 278295543}
   - {fileID: 81065190}
+  towerWeight: 0
 --- !u!4 &278701293
 Transform:
   m_ObjectHideFlags: 0
@@ -5068,6 +5229,7 @@ MonoBehaviour:
   - {fileID: 371920697}
   - {fileID: 1089755151}
   - {fileID: 81515514}
+  towerWeight: 0
 --- !u!4 &292658206
 Transform:
   m_ObjectHideFlags: 0
@@ -5167,6 +5329,7 @@ MonoBehaviour:
   - {fileID: 447475981}
   - {fileID: 967195548}
   - {fileID: 381243608}
+  towerWeight: 0
 --- !u!4 &299109304
 Transform:
   m_ObjectHideFlags: 0
@@ -5266,6 +5429,7 @@ MonoBehaviour:
   - {fileID: 1621748085}
   - {fileID: 687073590}
   - {fileID: 44810238}
+  towerWeight: 0
 --- !u!4 &305939391
 Transform:
   m_ObjectHideFlags: 0
@@ -5364,6 +5528,7 @@ MonoBehaviour:
   - {fileID: 1710049710}
   - {fileID: 1712799881}
   - {fileID: 958939942}
+  towerWeight: 0
 --- !u!4 &321842375
 Transform:
   m_ObjectHideFlags: 0
@@ -5462,6 +5627,7 @@ MonoBehaviour:
   - {fileID: 1470971137}
   - {fileID: 258154028}
   - {fileID: 1375437181}
+  towerWeight: 0
 --- !u!4 &323893146
 Transform:
   m_ObjectHideFlags: 0
@@ -5560,6 +5726,7 @@ MonoBehaviour:
   - {fileID: 904665964}
   - {fileID: 278701292}
   - {fileID: 478448035}
+  towerWeight: 0
 --- !u!4 &329487896
 Transform:
   m_ObjectHideFlags: 0
@@ -5971,6 +6138,7 @@ MonoBehaviour:
   - {fileID: 381243608}
   - {fileID: 967195548}
   - {fileID: 1317645158}
+  towerWeight: 0
 --- !u!4 &343361928
 Transform:
   m_ObjectHideFlags: 0
@@ -6284,6 +6452,7 @@ MonoBehaviour:
   - {fileID: 684835085}
   - {fileID: 299109303}
   - {fileID: 1541297765}
+  towerWeight: 0
 --- !u!4 &361669115
 Transform:
   m_ObjectHideFlags: 0
@@ -6383,6 +6552,7 @@ MonoBehaviour:
   - {fileID: 128303197}
   - {fileID: 183667234}
   - {fileID: 1051254158}
+  towerWeight: 0
 --- !u!4 &370183063
 Transform:
   m_ObjectHideFlags: 0
@@ -6481,6 +6651,7 @@ MonoBehaviour:
   - {fileID: 230691179}
   - {fileID: 292658205}
   - {fileID: 665007886}
+  towerWeight: 0
 --- !u!4 &371920698
 Transform:
   m_ObjectHideFlags: 0
@@ -6579,6 +6750,7 @@ MonoBehaviour:
   - {fileID: 1030071994}
   - {fileID: 2044852880}
   - {fileID: 658325180}
+  towerWeight: 0
 --- !u!4 &374449783
 Transform:
   m_ObjectHideFlags: 0
@@ -6683,6 +6855,7 @@ MonoBehaviour:
   - {fileID: 1670421565}
   - {fileID: 433655571}
   - {fileID: 1647532477}
+  towerWeight: 0
 --- !u!4 &379756802
 Transform:
   m_ObjectHideFlags: 0
@@ -6781,6 +6954,7 @@ MonoBehaviour:
   - {fileID: 1541297765}
   - {fileID: 299109303}
   - {fileID: 343361927}
+  towerWeight: 0
 --- !u!4 &381243609
 Transform:
   m_ObjectHideFlags: 0
@@ -6879,6 +7053,7 @@ MonoBehaviour:
   - {fileID: 1669894701}
   - {fileID: 904665964}
   - {fileID: 1268896433}
+  towerWeight: 0
 --- !u!4 &382130149
 Transform:
   m_ObjectHideFlags: 0
@@ -6978,6 +7153,7 @@ MonoBehaviour:
   - {fileID: 1183835040}
   - {fileID: 2033070506}
   - {fileID: 652028389}
+  towerWeight: 0
 --- !u!4 &383621485
 Transform:
   m_ObjectHideFlags: 0
@@ -7076,6 +7252,7 @@ MonoBehaviour:
   - {fileID: 1497811789}
   - {fileID: 1771910979}
   - {fileID: 1882096843}
+  towerWeight: 0
 --- !u!4 &384141433
 Transform:
   m_ObjectHideFlags: 0
@@ -7295,6 +7472,7 @@ MonoBehaviour:
   - {fileID: 1858652549}
   - {fileID: 1188433148}
   - {fileID: 482566831}
+  towerWeight: 0
 --- !u!4 &411919132
 Transform:
   m_ObjectHideFlags: 0
@@ -7398,6 +7576,7 @@ MonoBehaviour:
   - {fileID: 1049729855}
   - {fileID: 964084424}
   - {fileID: 1166319526}
+  towerWeight: 0
 --- !u!4 &422540231
 Transform:
   m_ObjectHideFlags: 0
@@ -7497,6 +7676,7 @@ MonoBehaviour:
   - {fileID: 249011930}
   - {fileID: 589197705}
   - {fileID: 1218495552}
+  towerWeight: 0
 --- !u!4 &426117331
 Transform:
   m_ObjectHideFlags: 0
@@ -7596,6 +7776,7 @@ MonoBehaviour:
   - {fileID: 681030809}
   - {fileID: 1375640173}
   - {fileID: 1343659857}
+  towerWeight: 0
 --- !u!4 &433655572
 Transform:
   m_ObjectHideFlags: 0
@@ -7695,6 +7876,7 @@ MonoBehaviour:
   - {fileID: 2016149830}
   - {fileID: 1380531057}
   - {fileID: 2034844781}
+  towerWeight: 0
 --- !u!4 &438427265
 Transform:
   m_ObjectHideFlags: 0
@@ -7793,6 +7975,7 @@ MonoBehaviour:
   - {fileID: 927722391}
   - {fileID: 1109464243}
   - {fileID: 2022843820}
+  towerWeight: 0
 --- !u!4 &444465675
 Transform:
   m_ObjectHideFlags: 0
@@ -7892,6 +8075,7 @@ MonoBehaviour:
   - {fileID: 636163160}
   - {fileID: 2021131422}
   - {fileID: 299109303}
+  towerWeight: 0
 --- !u!4 &447475982
 Transform:
   m_ObjectHideFlags: 0
@@ -7991,6 +8175,7 @@ MonoBehaviour:
   - {fileID: 1637617369}
   - {fileID: 454830900}
   - {fileID: 1990520431}
+  towerWeight: 0
 --- !u!4 &447751617
 Transform:
   m_ObjectHideFlags: 0
@@ -8090,6 +8275,7 @@ MonoBehaviour:
   - {fileID: 1510989199}
   - {fileID: 1659720175}
   - {fileID: 1153797942}
+  towerWeight: 0
 --- !u!4 &454830901
 Transform:
   m_ObjectHideFlags: 0
@@ -8199,6 +8385,7 @@ MonoBehaviour:
   - {fileID: 329487895}
   - {fileID: 81065190}
   - {fileID: 1637617369}
+  towerWeight: 0
 --- !u!4 &478448036
 Transform:
   m_ObjectHideFlags: 0
@@ -8297,6 +8484,7 @@ MonoBehaviour:
   - {fileID: 411919131}
   - {fileID: 900639427}
   - {fileID: 1818924177}
+  towerWeight: 0
 --- !u!4 &482566832
 Transform:
   m_ObjectHideFlags: 0
@@ -8396,6 +8584,7 @@ MonoBehaviour:
   - {fileID: 1779705343}
   - {fileID: 179163561}
   - {fileID: 957370128}
+  towerWeight: 0
 --- !u!4 &497495805
 Transform:
   m_ObjectHideFlags: 0
@@ -8499,6 +8688,7 @@ MonoBehaviour:
   - {fileID: 957370128}
   - {fileID: 1533771093}
   - {fileID: 278295543}
+  towerWeight: 0
 --- !u!4 &512607398
 Transform:
   m_ObjectHideFlags: 0
@@ -8597,6 +8787,7 @@ MonoBehaviour:
   - {fileID: 71947236}
   - {fileID: 579468343}
   - {fileID: 739487325}
+  towerWeight: 0
 --- !u!4 &525006232
 Transform:
   m_ObjectHideFlags: 0
@@ -8695,6 +8886,7 @@ MonoBehaviour:
   - {fileID: 586417945}
   - {fileID: 70342115}
   - {fileID: 263006599}
+  towerWeight: 0
 --- !u!4 &532092168
 Transform:
   m_ObjectHideFlags: 0
@@ -8863,6 +9055,7 @@ MonoBehaviour:
   - {fileID: 812833618}
   - {fileID: 426117330}
   - {fileID: 1011734121}
+  towerWeight: 0
 --- !u!4 &561902741
 Transform:
   m_ObjectHideFlags: 0
@@ -8961,6 +9154,7 @@ MonoBehaviour:
   - {fileID: 2082699740}
   - {fileID: 913918754}
   - {fileID: 1614004507}
+  towerWeight: 0
 --- !u!4 &562806121
 Transform:
   m_ObjectHideFlags: 0
@@ -9202,6 +9396,7 @@ MonoBehaviour:
   - {fileID: 1947514901}
   - {fileID: 1132228255}
   - {fileID: 383621484}
+  towerWeight: 0
 --- !u!4 &571252148
 Transform:
   m_ObjectHideFlags: 0
@@ -9300,6 +9495,7 @@ MonoBehaviour:
   - {fileID: 934345742}
   - {fileID: 1167758570}
   - {fileID: 180848326}
+  towerWeight: 0
 --- !u!4 &571523106
 Transform:
   m_ObjectHideFlags: 0
@@ -9404,6 +9600,7 @@ MonoBehaviour:
   - {fileID: 1710049710}
   - {fileID: 958939942}
   - {fileID: 1713347555}
+  towerWeight: 0
 --- !u!4 &575744125
 Transform:
   m_ObjectHideFlags: 0
@@ -9502,6 +9699,7 @@ MonoBehaviour:
   - {fileID: 170231051}
   - {fileID: 1366278323}
   - {fileID: 525006231}
+  towerWeight: 0
 --- !u!4 &579468344
 Transform:
   m_ObjectHideFlags: 0
@@ -9600,6 +9798,7 @@ MonoBehaviour:
   - {fileID: 1544590262}
   - {fileID: 892589452}
   - {fileID: 1038652768}
+  towerWeight: 0
 --- !u!4 &584002097
 Transform:
   m_ObjectHideFlags: 0
@@ -9698,6 +9897,7 @@ MonoBehaviour:
   - {fileID: 1342192073}
   - {fileID: 589248366}
   - {fileID: 532092167}
+  towerWeight: 0
 --- !u!4 &586417946
 Transform:
   m_ObjectHideFlags: 0
@@ -9866,6 +10066,7 @@ MonoBehaviour:
   - {fileID: 1414126515}
   - {fileID: 2088839382}
   - {fileID: 1846214946}
+  towerWeight: 0
 --- !u!4 &589197706
 Transform:
   m_ObjectHideFlags: 0
@@ -9965,6 +10166,7 @@ MonoBehaviour:
   - {fileID: 1752265982}
   - {fileID: 131623350}
   - {fileID: 70342115}
+  towerWeight: 0
 --- !u!4 &589248367
 Transform:
   m_ObjectHideFlags: 0
@@ -10063,6 +10265,7 @@ MonoBehaviour:
   - {fileID: 880624127}
   - {fileID: 2054353600}
   - {fileID: 1647532477}
+  towerWeight: 0
 --- !u!4 &589511374
 Transform:
   m_ObjectHideFlags: 0
@@ -10161,6 +10364,7 @@ MonoBehaviour:
   - {fileID: 123991401}
   - {fileID: 49303361}
   - {fileID: 62755511}
+  towerWeight: 0
 --- !u!4 &603270894
 Transform:
   m_ObjectHideFlags: 0
@@ -10259,6 +10463,7 @@ MonoBehaviour:
   - {fileID: 809918865}
   - {fileID: 1791240102}
   - {fileID: 1057599332}
+  towerWeight: 0
 --- !u!4 &604016971
 Transform:
   m_ObjectHideFlags: 0
@@ -10322,71 +10527,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &609794943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 43.383904
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.257
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 20.0936
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4674271352763949121, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5858045490110511723, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: m_Name
-      value: P_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6219926646651792795, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: goal
-      value: 
-      objectReference: {fileID: 913918754}
-    - target: {fileID: 6219926646651792795, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
-      propertyPath: start
-      value: 
-      objectReference: {fileID: 2034844781}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65f287511a108324ea3c40df0a1fbacf, type: 3}
 --- !u!1 &610176878
 GameObject:
   m_ObjectHideFlags: 0
@@ -10423,6 +10563,7 @@ MonoBehaviour:
   - {fileID: 904665964}
   - {fileID: 478448035}
   - {fileID: 1376735590}
+  towerWeight: 0
 --- !u!4 &610176880
 Transform:
   m_ObjectHideFlags: 0
@@ -10595,6 +10736,7 @@ MonoBehaviour:
   - {fileID: 183667234}
   - {fileID: 815957608}
   - {fileID: 112485919}
+  towerWeight: 0
 --- !u!4 &624895421
 Transform:
   m_ObjectHideFlags: 0
@@ -10694,6 +10836,7 @@ MonoBehaviour:
   - {fileID: 1644814883}
   - {fileID: 947040217}
   - {fileID: 2021131422}
+  towerWeight: 0
 --- !u!4 &627727477
 Transform:
   m_ObjectHideFlags: 0
@@ -10792,6 +10935,7 @@ MonoBehaviour:
   - {fileID: 1309609522}
   - {fileID: 1132228255}
   - {fileID: 1947514901}
+  towerWeight: 0
 --- !u!4 &628858480
 Transform:
   m_ObjectHideFlags: 0
@@ -10959,6 +11103,7 @@ MonoBehaviour:
   - {fileID: 1329757087}
   - {fileID: 1871201955}
   - {fileID: 1027692534}
+  towerWeight: 0
 --- !u!4 &633752423
 Transform:
   m_ObjectHideFlags: 0
@@ -11058,6 +11203,7 @@ MonoBehaviour:
   - {fileID: 979130606}
   - {fileID: 627727476}
   - {fileID: 447475981}
+  towerWeight: 0
 --- !u!4 &636163161
 Transform:
   m_ObjectHideFlags: 0
@@ -11156,6 +11302,7 @@ MonoBehaviour:
   - {fileID: 2007920132}
   - {fileID: 1049729855}
   - {fileID: 1166319526}
+  towerWeight: 0
 --- !u!4 &640798070
 Transform:
   m_ObjectHideFlags: 0
@@ -11328,6 +11475,7 @@ MonoBehaviour:
   - {fileID: 383621484}
   - {fileID: 1246403891}
   - {fileID: 900639427}
+  towerWeight: 0
 --- !u!4 &652028390
 Transform:
   m_ObjectHideFlags: 0
@@ -11427,6 +11575,7 @@ MonoBehaviour:
   - {fileID: 374449782}
   - {fileID: 1329757087}
   - {fileID: 942623505}
+  towerWeight: 0
 --- !u!4 &658325181
 Transform:
   m_ObjectHideFlags: 0
@@ -11525,6 +11674,7 @@ MonoBehaviour:
   - {fileID: 806982466}
   - {fileID: 1330873752}
   - {fileID: 1636037712}
+  towerWeight: 0
 --- !u!4 &664552417
 Transform:
   m_ObjectHideFlags: 0
@@ -11624,6 +11774,7 @@ MonoBehaviour:
   - {fileID: 371920697}
   - {fileID: 81515514}
   - {fileID: 172379315}
+  towerWeight: 0
 --- !u!4 &665007887
 Transform:
   m_ObjectHideFlags: 0
@@ -11722,6 +11873,7 @@ MonoBehaviour:
   - {fileID: 1380531057}
   - {fileID: 1011734121}
   - {fileID: 1652563875}
+  towerWeight: 0
 --- !u!4 &667686799
 Transform:
   m_ObjectHideFlags: 0
@@ -11826,6 +11978,7 @@ MonoBehaviour:
   - {fileID: 1708421238}
   - {fileID: 179260770}
   - {fileID: 433655571}
+  towerWeight: 0
 --- !u!4 &681030810
 Transform:
   m_ObjectHideFlags: 0
@@ -11924,6 +12077,7 @@ MonoBehaviour:
   - {fileID: 1652563875}
   - {fileID: 1846214946}
   - {fileID: 1622325341}
+  towerWeight: 0
 --- !u!4 &681318299
 Transform:
   m_ObjectHideFlags: 0
@@ -12022,6 +12176,7 @@ MonoBehaviour:
   - {fileID: 1437813931}
   - {fileID: 447475981}
   - {fileID: 361669114}
+  towerWeight: 0
 --- !u!4 &684835086
 Transform:
   m_ObjectHideFlags: 0
@@ -12121,6 +12276,7 @@ MonoBehaviour:
   - {fileID: 228791670}
   - {fileID: 1349887039}
   - {fileID: 2044852880}
+  towerWeight: 0
 --- !u!4 &687073591
 Transform:
   m_ObjectHideFlags: 0
@@ -12219,6 +12375,7 @@ MonoBehaviour:
   - {fileID: 1276150454}
   - {fileID: 44810238}
   - {fileID: 1779705343}
+  towerWeight: 0
 --- !u!4 &689065253
 Transform:
   m_ObjectHideFlags: 0
@@ -12316,6 +12473,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 739487325}
   - {fileID: 1455300314}
+  towerWeight: 0
 --- !u!4 &713023546
 Transform:
   m_ObjectHideFlags: 0
@@ -12424,6 +12582,7 @@ MonoBehaviour:
   - {fileID: 62755511}
   - {fileID: 60935460}
   - {fileID: 1989825816}
+  towerWeight: 0
 --- !u!4 &720997629
 Transform:
   m_ObjectHideFlags: 0
@@ -12592,6 +12751,7 @@ MonoBehaviour:
   - {fileID: 1246403891}
   - {fileID: 136637808}
   - {fileID: 1818924177}
+  towerWeight: 0
 --- !u!4 &726734665
 Transform:
   m_ObjectHideFlags: 0
@@ -12695,6 +12855,7 @@ MonoBehaviour:
   - {fileID: 525006231}
   - {fileID: 1366278323}
   - {fileID: 713023545}
+  towerWeight: 0
 --- !u!4 &739487326
 Transform:
   m_ObjectHideFlags: 0
@@ -12792,6 +12953,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 135545103}
   - {fileID: 1024291839}
+  towerWeight: 0
 --- !u!4 &740394348
 Transform:
   m_ObjectHideFlags: 0
@@ -12891,6 +13053,7 @@ MonoBehaviour:
   - {fileID: 172379315}
   - {fileID: 170231051}
   - {fileID: 1373805939}
+  towerWeight: 0
 --- !u!4 &743115331
 Transform:
   m_ObjectHideFlags: 0
@@ -13058,6 +13221,7 @@ MonoBehaviour:
   - {fileID: 1552055755}
   - {fileID: 67968714}
   - {fileID: 920892228}
+  towerWeight: 0
 --- !u!4 &755285531
 Transform:
   m_ObjectHideFlags: 0
@@ -13162,6 +13326,7 @@ MonoBehaviour:
   - {fileID: 230691179}
   - {fileID: 665007886}
   - {fileID: 2088839382}
+  towerWeight: 0
 --- !u!4 &758981250
 Transform:
   m_ObjectHideFlags: 0
@@ -13258,6 +13423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 75647567}
+  towerWeight: 0
 --- !u!4 &764201093
 Transform:
   m_ObjectHideFlags: 0
@@ -13424,6 +13590,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1429992941}
   - {fileID: 2084535367}
+  towerWeight: 0
 --- !u!4 &773963602
 Transform:
   m_ObjectHideFlags: 0
@@ -13527,6 +13694,7 @@ MonoBehaviour:
   - {fileID: 1708421238}
   - {fileID: 843384246}
   - {fileID: 179260770}
+  towerWeight: 0
 --- !u!4 &777481710
 Transform:
   m_ObjectHideFlags: 0
@@ -13590,6 +13758,108 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &785983143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785983147}
+  - component: {fileID: 785983146}
+  - component: {fileID: 785983145}
+  - component: {fileID: 785983144}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &785983144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785983143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &785983145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785983143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &785983146
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785983143}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &785983147
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785983143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 277322080}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &806982465
 GameObject:
   m_ObjectHideFlags: 0
@@ -13626,6 +13896,7 @@ MonoBehaviour:
   - {fileID: 958939942}
   - {fileID: 664552416}
   - {fileID: 60026129}
+  towerWeight: 0
 --- !u!4 &806982467
 Transform:
   m_ObjectHideFlags: 0
@@ -13724,6 +13995,7 @@ MonoBehaviour:
   - {fileID: 1032436226}
   - {fileID: 1929000338}
   - {fileID: 604016970}
+  towerWeight: 0
 --- !u!4 &809918866
 Transform:
   m_ObjectHideFlags: 0
@@ -13828,6 +14100,7 @@ MonoBehaviour:
   - {fileID: 1015447491}
   - {fileID: 249011930}
   - {fileID: 561902740}
+  towerWeight: 0
 --- !u!4 &812833619
 Transform:
   m_ObjectHideFlags: 0
@@ -14064,6 +14337,7 @@ MonoBehaviour:
   - {fileID: 624895420}
   - {fileID: 1846435349}
   - {fileID: 834243422}
+  towerWeight: 0
 --- !u!4 &815957609
 Transform:
   m_ObjectHideFlags: 0
@@ -14163,6 +14437,7 @@ MonoBehaviour:
   - {fileID: 2079279200}
   - {fileID: 1015447491}
   - {fileID: 1948239614}
+  towerWeight: 0
 --- !u!4 &826307195
 Transform:
   m_ObjectHideFlags: 0
@@ -14330,6 +14605,7 @@ MonoBehaviour:
   - {fileID: 2034844781}
   - {fileID: 1380531057}
   - {fileID: 1363358863}
+  towerWeight: 0
 --- !u!4 &828830092
 Transform:
   m_ObjectHideFlags: 0
@@ -14482,6 +14758,7 @@ MonoBehaviour:
   - {fileID: 112485919}
   - {fileID: 815957608}
   - {fileID: 1276150454}
+  towerWeight: 0
 --- !u!4 &834243423
 Transform:
   m_ObjectHideFlags: 0
@@ -14580,6 +14857,7 @@ MonoBehaviour:
   - {fileID: 979781307}
   - {fileID: 575744124}
   - {fileID: 892589452}
+  towerWeight: 0
 --- !u!4 &839979752
 Transform:
   m_ObjectHideFlags: 0
@@ -14679,6 +14957,7 @@ MonoBehaviour:
   - {fileID: 180848326}
   - {fileID: 370183062}
   - {fileID: 1127635559}
+  towerWeight: 0
 --- !u!4 &841328272
 Transform:
   m_ObjectHideFlags: 0
@@ -14781,6 +15060,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 777481709}
   - {fileID: 75647567}
+  towerWeight: 0
 --- !u!4 &843384247
 Transform:
   m_ObjectHideFlags: 0
@@ -14879,6 +15159,7 @@ MonoBehaviour:
   - {fileID: 60935460}
   - {fileID: 988505945}
   - {fileID: 1989825816}
+  towerWeight: 0
 --- !u!4 &848947583
 Transform:
   m_ObjectHideFlags: 0
@@ -15120,6 +15401,7 @@ MonoBehaviour:
   - {fileID: 1349887039}
   - {fileID: 1610230376}
   - {fileID: 589511373}
+  towerWeight: 0
 --- !u!4 &880624128
 Transform:
   m_ObjectHideFlags: 0
@@ -15224,6 +15506,7 @@ MonoBehaviour:
   - {fileID: 839979751}
   - {fileID: 1713347555}
   - {fileID: 584002096}
+  towerWeight: 0
 --- !u!4 &892589453
 Transform:
   m_ObjectHideFlags: 0
@@ -15323,6 +15606,7 @@ MonoBehaviour:
   - {fileID: 652028389}
   - {fileID: 726734664}
   - {fileID: 482566831}
+  towerWeight: 0
 --- !u!4 &900639428
 Transform:
   m_ObjectHideFlags: 0
@@ -15421,6 +15705,7 @@ MonoBehaviour:
   - {fileID: 382130148}
   - {fileID: 329487895}
   - {fileID: 610176879}
+  towerWeight: 0
 --- !u!4 &904665965
 Transform:
   m_ObjectHideFlags: 0
@@ -15519,6 +15804,7 @@ MonoBehaviour:
   - {fileID: 2017378199}
   - {fileID: 2034844781}
   - {fileID: 1517868491}
+  towerWeight: 0
 --- !u!4 &909485491
 Transform:
   m_ObjectHideFlags: 0
@@ -15622,6 +15908,7 @@ MonoBehaviour:
   - {fileID: 562806120}
   - {fileID: 1562151831}
   - {fileID: 1964345429}
+  towerWeight: 0
 --- !u!4 &913918755
 Transform:
   m_ObjectHideFlags: 0
@@ -15721,6 +16008,7 @@ MonoBehaviour:
   - {fileID: 2114890916}
   - {fileID: 1771910979}
   - {fileID: 1497811789}
+  towerWeight: 0
 --- !u!4 &914355840
 Transform:
   m_ObjectHideFlags: 0
@@ -15928,6 +16216,7 @@ MonoBehaviour:
   - {fileID: 755285530}
   - {fileID: 2016149830}
   - {fileID: 2017378199}
+  towerWeight: 0
 --- !u!4 &920892229
 Transform:
   m_ObjectHideFlags: 0
@@ -16026,6 +16315,7 @@ MonoBehaviour:
   - {fileID: 1789540336}
   - {fileID: 2105985352}
   - {fileID: 1207022922}
+  towerWeight: 0
 --- !u!4 &920990397
 Transform:
   m_ObjectHideFlags: 0
@@ -16124,6 +16414,7 @@ MonoBehaviour:
   - {fileID: 1871201955}
   - {fileID: 444465674}
   - {fileID: 267151119}
+  towerWeight: 0
 --- !u!4 &927722392
 Transform:
   m_ObjectHideFlags: 0
@@ -16222,6 +16513,7 @@ MonoBehaviour:
   - {fileID: 1024291839}
   - {fileID: 571523105}
   - {fileID: 1397356770}
+  towerWeight: 0
 --- !u!4 &934345743
 Transform:
   m_ObjectHideFlags: 0
@@ -16326,6 +16618,7 @@ MonoBehaviour:
   - {fileID: 658325180}
   - {fileID: 1410826892}
   - {fileID: 1661976901}
+  towerWeight: 0
 --- !u!4 &942623506
 Transform:
   m_ObjectHideFlags: 0
@@ -16423,6 +16716,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 627727476}
   - {fileID: 961296759}
+  towerWeight: 0
 --- !u!4 &947040218
 Transform:
   m_ObjectHideFlags: 0
@@ -16519,6 +16813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neighbours:
   - {fileID: 135545103}
+  towerWeight: 0
 --- !u!4 &947164311
 Transform:
   m_ObjectHideFlags: 0
@@ -16621,6 +16916,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1167758570}
   - {fileID: 1171918323}
+  towerWeight: 0
 --- !u!4 &956724781
 Transform:
   m_ObjectHideFlags: 0
@@ -16720,6 +17016,7 @@ MonoBehaviour:
   - {fileID: 497495804}
   - {fileID: 240734159}
   - {fileID: 512607397}
+  towerWeight: 0
 --- !u!4 &957370129
 Transform:
   m_ObjectHideFlags: 0
@@ -16818,6 +17115,7 @@ MonoBehaviour:
   - {fileID: 575744124}
   - {fileID: 321842374}
   - {fileID: 806982466}
+  towerWeight: 0
 --- !u!4 &958939943
 Transform:
   m_ObjectHideFlags: 0
@@ -16915,6 +17213,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1644814883}
   - {fileID: 947040217}
+  towerWeight: 0
 --- !u!4 &961296760
 Transform:
   m_ObjectHideFlags: 0
@@ -17013,6 +17312,7 @@ MonoBehaviour:
   - {fileID: 422540230}
   - {fileID: 1813298030}
   - {fileID: 16116058}
+  towerWeight: 0
 --- !u!4 &964084425
 Transform:
   m_ObjectHideFlags: 0
@@ -17117,6 +17417,7 @@ MonoBehaviour:
   - {fileID: 2021131422}
   - {fileID: 1480519311}
   - {fileID: 343361927}
+  towerWeight: 0
 --- !u!4 &967195549
 Transform:
   m_ObjectHideFlags: 0
@@ -17215,6 +17516,7 @@ MonoBehaviour:
   - {fileID: 1109464243}
   - {fileID: 1644814883}
   - {fileID: 636163160}
+  towerWeight: 0
 --- !u!4 &979130607
 Transform:
   m_ObjectHideFlags: 0
@@ -17312,6 +17614,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1562151831}
   - {fileID: 2093839645}
+  towerWeight: 0
 --- !u!4 &979166506
 Transform:
   m_ObjectHideFlags: 0
@@ -17410,6 +17713,7 @@ MonoBehaviour:
   - {fileID: 1207022922}
   - {fileID: 1710049710}
   - {fileID: 839979751}
+  towerWeight: 0
 --- !u!4 &979781308
 Transform:
   m_ObjectHideFlags: 0
@@ -17577,6 +17881,7 @@ MonoBehaviour:
   - {fileID: 848947582}
   - {fileID: 361669114}
   - {fileID: 1485774074}
+  towerWeight: 0
 --- !u!4 &988505946
 Transform:
   m_ObjectHideFlags: 0
@@ -17750,6 +18055,7 @@ MonoBehaviour:
   - {fileID: 561902740}
   - {fileID: 1218495552}
   - {fileID: 667686798}
+  towerWeight: 0
 --- !u!4 &1011734122
 Transform:
   m_ObjectHideFlags: 0
@@ -17848,6 +18154,7 @@ MonoBehaviour:
   - {fileID: 826307194}
   - {fileID: 1914371191}
   - {fileID: 812833618}
+  towerWeight: 0
 --- !u!4 &1015447492
 Transform:
   m_ObjectHideFlags: 0
@@ -17950,6 +18257,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 740394347}
   - {fileID: 934345742}
+  towerWeight: 0
 --- !u!4 &1024291840
 Transform:
   m_ObjectHideFlags: 0
@@ -18048,6 +18356,7 @@ MonoBehaviour:
   - {fileID: 1410826892}
   - {fileID: 633752422}
   - {fileID: 1918407433}
+  towerWeight: 0
 --- !u!4 &1027692535
 Transform:
   m_ObjectHideFlags: 0
@@ -18147,6 +18456,7 @@ MonoBehaviour:
   - {fileID: 44810238}
   - {fileID: 374449782}
   - {fileID: 179163561}
+  towerWeight: 0
 --- !u!4 &1030071995
 Transform:
   m_ObjectHideFlags: 0
@@ -18245,6 +18555,7 @@ MonoBehaviour:
   - {fileID: 1326016613}
   - {fileID: 1504246055}
   - {fileID: 809918865}
+  towerWeight: 0
 --- !u!4 &1032436227
 Transform:
   m_ObjectHideFlags: 0
@@ -18412,6 +18723,7 @@ MonoBehaviour:
   - {fileID: 584002096}
   - {fileID: 1713347555}
   - {fileID: 60026129}
+  towerWeight: 0
 --- !u!4 &1038652769
 Transform:
   m_ObjectHideFlags: 0
@@ -18579,6 +18891,7 @@ MonoBehaviour:
   - {fileID: 2006421587}
   - {fileID: 422540230}
   - {fileID: 640798069}
+  towerWeight: 0
 --- !u!4 &1049729856
 Transform:
   m_ObjectHideFlags: 0
@@ -18677,6 +18990,7 @@ MonoBehaviour:
   - {fileID: 1127635559}
   - {fileID: 370183062}
   - {fileID: 1986391263}
+  towerWeight: 0
 --- !u!4 &1051254159
 Transform:
   m_ObjectHideFlags: 0
@@ -18775,6 +19089,7 @@ MonoBehaviour:
   - {fileID: 604016970}
   - {fileID: 1691344226}
   - {fileID: 2017378199}
+  towerWeight: 0
 --- !u!4 &1057599333
 Transform:
   m_ObjectHideFlags: 0
@@ -18873,6 +19188,7 @@ MonoBehaviour:
   - {fileID: 1517868491}
   - {fileID: 2034844781}
   - {fileID: 1363358863}
+  towerWeight: 0
 --- !u!4 &1058936235
 Transform:
   m_ObjectHideFlags: 0
@@ -18970,6 +19286,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1975470433}
   - {fileID: 27688833}
+  towerWeight: 0
 --- !u!4 &1060042803
 Transform:
   m_ObjectHideFlags: 0
@@ -19069,6 +19386,7 @@ MonoBehaviour:
   - {fileID: 1893102579}
   - {fileID: 1712799881}
   - {fileID: 1710049710}
+  towerWeight: 0
 --- !u!4 &1070416778
 Transform:
   m_ObjectHideFlags: 0
@@ -19166,6 +19484,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 202108062}
   - {fileID: 1544590262}
+  towerWeight: 0
 --- !u!4 &1081544268
 Transform:
   m_ObjectHideFlags: 0
@@ -19264,6 +19583,7 @@ MonoBehaviour:
   - {fileID: 292658205}
   - {fileID: 114533484}
   - {fileID: 1258701173}
+  towerWeight: 0
 --- !u!4 &1089755152
 Transform:
   m_ObjectHideFlags: 0
@@ -19367,6 +19687,7 @@ MonoBehaviour:
   - {fileID: 258154028}
   - {fileID: 497495804}
   - {fileID: 1375437181}
+  towerWeight: 0
 --- !u!4 &1097148508
 Transform:
   m_ObjectHideFlags: 0
@@ -19470,6 +19791,7 @@ MonoBehaviour:
   - {fileID: 444465674}
   - {fileID: 979130606}
   - {fileID: 1437813931}
+  towerWeight: 0
 --- !u!4 &1109464244
 Transform:
   m_ObjectHideFlags: 0
@@ -19569,6 +19891,7 @@ MonoBehaviour:
   - {fileID: 1266617326}
   - {fileID: 2079279200}
   - {fileID: 1852713242}
+  towerWeight: 0
 --- !u!4 &1111871400
 Transform:
   m_ObjectHideFlags: 0
@@ -19667,6 +19990,7 @@ MonoBehaviour:
   - {fileID: 136637808}
   - {fileID: 1504246055}
   - {fileID: 1326016613}
+  towerWeight: 0
 --- !u!4 &1125520297
 Transform:
   m_ObjectHideFlags: 0
@@ -19765,6 +20089,7 @@ MonoBehaviour:
   - {fileID: 1712799881}
   - {fileID: 841328271}
   - {fileID: 1051254158}
+  towerWeight: 0
 --- !u!4 &1127635560
 Transform:
   m_ObjectHideFlags: 0
@@ -19868,6 +20193,7 @@ MonoBehaviour:
   - {fileID: 628858479}
   - {fileID: 1183835040}
   - {fileID: 571252147}
+  towerWeight: 0
 --- !u!4 &1132228256
 Transform:
   m_ObjectHideFlags: 0
@@ -19967,6 +20293,7 @@ MonoBehaviour:
   - {fileID: 263006599}
   - {fileID: 1195273058}
   - {fileID: 1662193223}
+  towerWeight: 0
 --- !u!4 &1135787930
 Transform:
   m_ObjectHideFlags: 0
@@ -20066,6 +20393,7 @@ MonoBehaviour:
   - {fileID: 454830900}
   - {fileID: 1269993967}
   - {fileID: 2047647065}
+  towerWeight: 0
 --- !u!4 &1153797943
 Transform:
   m_ObjectHideFlags: 0
@@ -20164,6 +20492,7 @@ MonoBehaviour:
   - {fileID: 1266617326}
   - {fileID: 123991401}
   - {fileID: 2079279200}
+  towerWeight: 0
 --- !u!4 &1164953833
 Transform:
   m_ObjectHideFlags: 0
@@ -20262,6 +20591,7 @@ MonoBehaviour:
   - {fileID: 640798069}
   - {fileID: 422540230}
   - {fileID: 16116058}
+  towerWeight: 0
 --- !u!4 &1166319527
 Transform:
   m_ObjectHideFlags: 0
@@ -20365,6 +20695,7 @@ MonoBehaviour:
   - {fileID: 571523105}
   - {fileID: 956724780}
   - {fileID: 128303197}
+  towerWeight: 0
 --- !u!4 &1167758571
 Transform:
   m_ObjectHideFlags: 0
@@ -20467,6 +20798,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 956724780}
   - {fileID: 2082699740}
+  towerWeight: 0
 --- !u!4 &1171918324
 Transform:
   m_ObjectHideFlags: 0
@@ -20565,6 +20897,7 @@ MonoBehaviour:
   - {fileID: 1132228255}
   - {fileID: 260716567}
   - {fileID: 383621484}
+  towerWeight: 0
 --- !u!4 &1183835041
 Transform:
   m_ObjectHideFlags: 0
@@ -20663,6 +20996,7 @@ MonoBehaviour:
   - {fileID: 1765199580}
   - {fileID: 900639427}
   - {fileID: 411919131}
+  towerWeight: 0
 --- !u!4 &1188433149
 Transform:
   m_ObjectHideFlags: 0
@@ -20761,6 +21095,7 @@ MonoBehaviour:
   - {fileID: 1135787929}
   - {fileID: 1588292516}
   - {fileID: 1497811789}
+  towerWeight: 0
 --- !u!4 &1195273059
 Transform:
   m_ObjectHideFlags: 0
@@ -20860,6 +21195,7 @@ MonoBehaviour:
   - {fileID: 1644692063}
   - {fileID: 1070416777}
   - {fileID: 979781307}
+  towerWeight: 0
 --- !u!4 &1207022923
 Transform:
   m_ObjectHideFlags: 0
@@ -20959,6 +21295,7 @@ MonoBehaviour:
   - {fileID: 426117330}
   - {fileID: 1846214946}
   - {fileID: 1652563875}
+  towerWeight: 0
 --- !u!4 &1218495553
 Transform:
   m_ObjectHideFlags: 0
@@ -21056,6 +21393,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 2105985352}
   - {fileID: 1789540336}
+  towerWeight: 0
 --- !u!4 &1235615302
 Transform:
   m_ObjectHideFlags: 0
@@ -21160,6 +21498,7 @@ MonoBehaviour:
   - {fileID: 2033070506}
   - {fileID: 1662193223}
   - {fileID: 726734664}
+  towerWeight: 0
 --- !u!4 &1246403892
 Transform:
   m_ObjectHideFlags: 0
@@ -21258,6 +21597,7 @@ MonoBehaviour:
   - {fileID: 172379315}
   - {fileID: 81515514}
   - {fileID: 170231051}
+  towerWeight: 0
 --- !u!4 &1258162071
 Transform:
   m_ObjectHideFlags: 0
@@ -21356,6 +21696,7 @@ MonoBehaviour:
   - {fileID: 81515514}
   - {fileID: 1089755151}
   - {fileID: 1429992941}
+  towerWeight: 0
 --- !u!4 &1258701174
 Transform:
   m_ObjectHideFlags: 0
@@ -21455,6 +21796,7 @@ MonoBehaviour:
   - {fileID: 1629171500}
   - {fileID: 1164953832}
   - {fileID: 1111871399}
+  towerWeight: 0
 --- !u!4 &1266617327
 Transform:
   m_ObjectHideFlags: 0
@@ -21554,6 +21896,7 @@ MonoBehaviour:
   - {fileID: 382130148}
   - {fileID: 610176879}
   - {fileID: 131623350}
+  towerWeight: 0
 --- !u!4 &1268896434
 Transform:
   m_ObjectHideFlags: 0
@@ -21653,6 +21996,7 @@ MonoBehaviour:
   - {fileID: 1659720175}
   - {fileID: 1852713242}
   - {fileID: 1552055755}
+  towerWeight: 0
 --- !u!4 &1269993968
 Transform:
   m_ObjectHideFlags: 0
@@ -21752,6 +22096,7 @@ MonoBehaviour:
   - {fileID: 1846435349}
   - {fileID: 305939390}
   - {fileID: 689065252}
+  towerWeight: 0
 --- !u!4 &1276150455
 Transform:
   m_ObjectHideFlags: 0
@@ -21918,6 +22263,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 173600347}
   - {fileID: 628858479}
+  towerWeight: 0
 --- !u!4 &1309609523
 Transform:
   m_ObjectHideFlags: 0
@@ -22015,6 +22361,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 343361927}
   - {fileID: 1480519311}
+  towerWeight: 0
 --- !u!4 &1317645159
 Transform:
   m_ObjectHideFlags: 0
@@ -22114,6 +22461,7 @@ MonoBehaviour:
   - {fileID: 1422899178}
   - {fileID: 1011734121}
   - {fileID: 1380531057}
+  towerWeight: 0
 --- !u!4 &1318589376
 Transform:
   m_ObjectHideFlags: 0
@@ -22350,6 +22698,7 @@ MonoBehaviour:
   - {fileID: 1872966166}
   - {fileID: 1125520296}
   - {fileID: 1032436226}
+  towerWeight: 0
 --- !u!4 &1326016614
 Transform:
   m_ObjectHideFlags: 0
@@ -22448,6 +22797,7 @@ MonoBehaviour:
   - {fileID: 658325180}
   - {fileID: 633752422}
   - {fileID: 1410826892}
+  towerWeight: 0
 --- !u!4 &1329757088
 Transform:
   m_ObjectHideFlags: 0
@@ -22546,6 +22896,7 @@ MonoBehaviour:
   - {fileID: 664552416}
   - {fileID: 1797762815}
   - {fileID: 1828612302}
+  towerWeight: 0
 --- !u!4 &1330873753
 Transform:
   m_ObjectHideFlags: 0
@@ -22645,6 +22996,7 @@ MonoBehaviour:
   - {fileID: 1813298030}
   - {fileID: 1752265982}
   - {fileID: 586417945}
+  towerWeight: 0
 --- !u!4 &1342192074
 Transform:
   m_ObjectHideFlags: 0
@@ -22743,6 +23095,7 @@ MonoBehaviour:
   - {fileID: 1647532477}
   - {fileID: 433655571}
   - {fileID: 1652471521}
+  towerWeight: 0
 --- !u!4 &1343659858
 Transform:
   m_ObjectHideFlags: 0
@@ -22885,6 +23238,7 @@ MonoBehaviour:
   - {fileID: 687073590}
   - {fileID: 235540246}
   - {fileID: 880624127}
+  towerWeight: 0
 --- !u!4 &1349887040
 Transform:
   m_ObjectHideFlags: 0
@@ -23106,6 +23460,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1058936234}
   - {fileID: 828830091}
+  towerWeight: 0
 --- !u!4 &1363358864
 Transform:
   m_ObjectHideFlags: 0
@@ -23204,6 +23559,7 @@ MonoBehaviour:
   - {fileID: 579468343}
   - {fileID: 1455300314}
   - {fileID: 739487325}
+  towerWeight: 0
 --- !u!4 &1366278324
 Transform:
   m_ObjectHideFlags: 0
@@ -23371,6 +23727,7 @@ MonoBehaviour:
   - {fileID: 1622325341}
   - {fileID: 743115330}
   - {fileID: 71947236}
+  towerWeight: 0
 --- !u!4 &1373805940
 Transform:
   m_ObjectHideFlags: 0
@@ -23469,6 +23826,7 @@ MonoBehaviour:
   - {fileID: 323893145}
   - {fileID: 1097148507}
   - {fileID: 957370128}
+  towerWeight: 0
 --- !u!4 &1375437182
 Transform:
   m_ObjectHideFlags: 0
@@ -23568,6 +23926,7 @@ MonoBehaviour:
   - {fileID: 179260770}
   - {fileID: 1783684487}
   - {fileID: 1652471521}
+  towerWeight: 0
 --- !u!4 &1375640174
 Transform:
   m_ObjectHideFlags: 0
@@ -23667,6 +24026,7 @@ MonoBehaviour:
   - {fileID: 610176879}
   - {fileID: 1637617369}
   - {fileID: 1994715569}
+  towerWeight: 0
 --- !u!4 &1376735591
 Transform:
   m_ObjectHideFlags: 0
@@ -23766,6 +24126,7 @@ MonoBehaviour:
   - {fileID: 1318589375}
   - {fileID: 667686798}
   - {fileID: 828830091}
+  towerWeight: 0
 --- !u!4 &1380531058
 Transform:
   m_ObjectHideFlags: 0
@@ -24002,6 +24363,7 @@ MonoBehaviour:
   - {fileID: 934345742}
   - {fileID: 180848326}
   - {fileID: 1860919181}
+  towerWeight: 0
 --- !u!4 &1397356771
 Transform:
   m_ObjectHideFlags: 0
@@ -24100,6 +24462,7 @@ MonoBehaviour:
   - {fileID: 942623505}
   - {fileID: 1329757087}
   - {fileID: 1027692534}
+  towerWeight: 0
 --- !u!4 &1410826893
 Transform:
   m_ObjectHideFlags: 0
@@ -24199,6 +24562,7 @@ MonoBehaviour:
   - {fileID: 1863720181}
   - {fileID: 758981249}
   - {fileID: 589197705}
+  towerWeight: 0
 --- !u!4 &1414126516
 Transform:
   m_ObjectHideFlags: 0
@@ -24298,6 +24662,7 @@ MonoBehaviour:
   - {fileID: 1948239614}
   - {fileID: 561902740}
   - {fileID: 1318589375}
+  towerWeight: 0
 --- !u!4 &1422899179
 Transform:
   m_ObjectHideFlags: 0
@@ -24396,6 +24761,7 @@ MonoBehaviour:
   - {fileID: 1258701173}
   - {fileID: 114533484}
   - {fileID: 773963601}
+  towerWeight: 0
 --- !u!4 &1429992942
 Transform:
   m_ObjectHideFlags: 0
@@ -24495,6 +24861,7 @@ MonoBehaviour:
   - {fileID: 1109464243}
   - {fileID: 636163160}
   - {fileID: 684835085}
+  towerWeight: 0
 --- !u!4 &1437813932
 Transform:
   m_ObjectHideFlags: 0
@@ -24592,6 +24959,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1366278323}
   - {fileID: 713023545}
+  towerWeight: 0
 --- !u!4 &1455300315
 Transform:
   m_ObjectHideFlags: 0
@@ -24655,6 +25023,144 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1455391968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455391969}
+  - component: {fileID: 1455391971}
+  - component: {fileID: 1455391970}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1455391969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455391968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1962968156}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 796, y: -44}
+  m_SizeDelta: {x: 275.3978, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1455391970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455391968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Build Cooldown:
+
+    5.55 seconds'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1455391971
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455391968}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1470868433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24759,6 +25265,7 @@ MonoBehaviour:
   - {fileID: 1828612302}
   - {fileID: 1797762815}
   - {fileID: 323893145}
+  towerWeight: 0
 --- !u!4 &1470971138
 Transform:
   m_ObjectHideFlags: 0
@@ -24856,6 +25363,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 967195548}
   - {fileID: 1317645158}
+  towerWeight: 0
 --- !u!4 &1480519312
 Transform:
   m_ObjectHideFlags: 0
@@ -25023,6 +25531,7 @@ MonoBehaviour:
   - {fileID: 1989825816}
   - {fileID: 988505945}
   - {fileID: 1541297765}
+  towerWeight: 0
 --- !u!4 &1485774075
 Transform:
   m_ObjectHideFlags: 0
@@ -25121,6 +25630,7 @@ MonoBehaviour:
   - {fileID: 1195273058}
   - {fileID: 914355839}
   - {fileID: 384141432}
+  towerWeight: 0
 --- !u!4 &1497811790
 Transform:
   m_ObjectHideFlags: 0
@@ -25219,6 +25729,7 @@ MonoBehaviour:
   - {fileID: 1125520296}
   - {fileID: 1929000338}
   - {fileID: 1032436226}
+  towerWeight: 0
 --- !u!4 &1504246056
 Transform:
   m_ObjectHideFlags: 0
@@ -25392,6 +25903,7 @@ MonoBehaviour:
   - {fileID: 81065190}
   - {fileID: 1824995490}
   - {fileID: 454830900}
+  towerWeight: 0
 --- !u!4 &1510989200
 Transform:
   m_ObjectHideFlags: 0
@@ -25489,6 +26001,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 909485490}
   - {fileID: 1058936234}
+  towerWeight: 0
 --- !u!4 &1517868492
 Transform:
   m_ObjectHideFlags: 0
@@ -25588,6 +26101,7 @@ MonoBehaviour:
   - {fileID: 240734159}
   - {fileID: 1661976901}
   - {fileID: 1922731648}
+  towerWeight: 0
 --- !u!4 &1533771094
 Transform:
   m_ObjectHideFlags: 0
@@ -25686,6 +26200,7 @@ MonoBehaviour:
   - {fileID: 1485774074}
   - {fileID: 361669114}
   - {fileID: 381243608}
+  towerWeight: 0
 --- !u!4 &1541297766
 Transform:
   m_ObjectHideFlags: 0
@@ -25784,6 +26299,7 @@ MonoBehaviour:
   - {fileID: 1081544267}
   - {fileID: 1886710346}
   - {fileID: 584002096}
+  towerWeight: 0
 --- !u!4 &1544590263
 Transform:
   m_ObjectHideFlags: 0
@@ -25888,6 +26404,7 @@ MonoBehaviour:
   - {fileID: 1269993967}
   - {fileID: 1846609800}
   - {fileID: 755285530}
+  towerWeight: 0
 --- !u!4 &1552055756
 Transform:
   m_ObjectHideFlags: 0
@@ -25986,6 +26503,7 @@ MonoBehaviour:
   - {fileID: 913918754}
   - {fileID: 979166505}
   - {fileID: 86055381}
+  towerWeight: 0
 --- !u!4 &1562151832
 Transform:
   m_ObjectHideFlags: 0
@@ -26090,6 +26608,7 @@ MonoBehaviour:
   - {fileID: 70342115}
   - {fileID: 914355839}
   - {fileID: 1195273058}
+  towerWeight: 0
 --- !u!4 &1588292517
 Transform:
   m_ObjectHideFlags: 0
@@ -26188,6 +26707,7 @@ MonoBehaviour:
   - {fileID: 235540246}
   - {fileID: 2054353600}
   - {fileID: 880624127}
+  towerWeight: 0
 --- !u!4 &1610230377
 Transform:
   m_ObjectHideFlags: 0
@@ -26286,6 +26806,7 @@ MonoBehaviour:
   - {fileID: 562806120}
   - {fileID: 1964345429}
   - {fileID: 1846435349}
+  towerWeight: 0
 --- !u!4 &1614004508
 Transform:
   m_ObjectHideFlags: 0
@@ -26395,6 +26916,7 @@ MonoBehaviour:
   - {fileID: 1964345429}
   - {fileID: 228791670}
   - {fileID: 305939390}
+  towerWeight: 0
 --- !u!4 &1621748086
 Transform:
   m_ObjectHideFlags: 0
@@ -26493,6 +27015,7 @@ MonoBehaviour:
   - {fileID: 681318298}
   - {fileID: 59647275}
   - {fileID: 1373805939}
+  towerWeight: 0
 --- !u!4 &1622325342
 Transform:
   m_ObjectHideFlags: 0
@@ -26592,6 +27115,7 @@ MonoBehaviour:
   - {fileID: 1922731648}
   - {fileID: 123991401}
   - {fileID: 1266617326}
+  towerWeight: 0
 --- !u!4 &1629171501
 Transform:
   m_ObjectHideFlags: 0
@@ -26759,6 +27283,7 @@ MonoBehaviour:
   - {fileID: 60026129}
   - {fileID: 664552416}
   - {fileID: 1828612302}
+  towerWeight: 0
 --- !u!4 &1636037713
 Transform:
   m_ObjectHideFlags: 0
@@ -26927,6 +27452,7 @@ MonoBehaviour:
   - {fileID: 478448035}
   - {fileID: 1510989199}
   - {fileID: 447751616}
+  towerWeight: 0
 --- !u!4 &1637617370
 Transform:
   m_ObjectHideFlags: 0
@@ -27025,6 +27551,7 @@ MonoBehaviour:
   - {fileID: 2105985352}
   - {fileID: 1893102579}
   - {fileID: 1207022922}
+  towerWeight: 0
 --- !u!4 &1644692064
 Transform:
   m_ObjectHideFlags: 0
@@ -27123,6 +27650,7 @@ MonoBehaviour:
   - {fileID: 979130606}
   - {fileID: 961296759}
   - {fileID: 627727476}
+  towerWeight: 0
 --- !u!4 &1644814884
 Transform:
   m_ObjectHideFlags: 0
@@ -27221,6 +27749,7 @@ MonoBehaviour:
   - {fileID: 589511373}
   - {fileID: 379756801}
   - {fileID: 1343659857}
+  towerWeight: 0
 --- !u!4 &1647532478
 Transform:
   m_ObjectHideFlags: 0
@@ -27398,6 +27927,7 @@ MonoBehaviour:
   - {fileID: 1343659857}
   - {fileID: 1375640173}
   - {fileID: 1789226649}
+  towerWeight: 0
 --- !u!4 &1652471522
 Transform:
   m_ObjectHideFlags: 0
@@ -27496,6 +28026,7 @@ MonoBehaviour:
   - {fileID: 667686798}
   - {fileID: 1218495552}
   - {fileID: 681318298}
+  towerWeight: 0
 --- !u!4 &1652563876
 Transform:
   m_ObjectHideFlags: 0
@@ -27664,6 +28195,7 @@ MonoBehaviour:
   - {fileID: 1824995490}
   - {fileID: 1111871399}
   - {fileID: 1269993967}
+  towerWeight: 0
 --- !u!4 &1659720176
 Transform:
   m_ObjectHideFlags: 0
@@ -27762,6 +28294,7 @@ MonoBehaviour:
   - {fileID: 1533771093}
   - {fileID: 942623505}
   - {fileID: 2136972387}
+  towerWeight: 0
 --- !u!4 &1661976902
 Transform:
   m_ObjectHideFlags: 0
@@ -27860,6 +28393,7 @@ MonoBehaviour:
   - {fileID: 1246403891}
   - {fileID: 1135787929}
   - {fileID: 136637808}
+  towerWeight: 0
 --- !u!4 &1662193224
 Transform:
   m_ObjectHideFlags: 0
@@ -27958,6 +28492,7 @@ MonoBehaviour:
   - {fileID: 1813298030}
   - {fileID: 382130148}
   - {fileID: 1752265982}
+  towerWeight: 0
 --- !u!4 &1669894702
 Transform:
   m_ObjectHideFlags: 0
@@ -28056,6 +28591,7 @@ MonoBehaviour:
   - {fileID: 1938986684}
   - {fileID: 681030809}
   - {fileID: 379756801}
+  towerWeight: 0
 --- !u!4 &1670421566
 Transform:
   m_ObjectHideFlags: 0
@@ -28154,6 +28690,7 @@ MonoBehaviour:
   - {fileID: 49303361}
   - {fileID: 60935460}
   - {fileID: 62755511}
+  towerWeight: 0
 --- !u!4 &1673536969
 Transform:
   m_ObjectHideFlags: 0
@@ -28390,6 +28927,7 @@ MonoBehaviour:
   - {fileID: 1791240102}
   - {fileID: 920892228}
   - {fileID: 1057599332}
+  towerWeight: 0
 --- !u!4 &1691344227
 Transform:
   m_ObjectHideFlags: 0
@@ -28488,6 +29026,7 @@ MonoBehaviour:
   - {fileID: 1789226649}
   - {fileID: 1975470433}
   - {fileID: 27688833}
+  towerWeight: 0
 --- !u!4 &1695216567
 Transform:
   m_ObjectHideFlags: 0
@@ -28596,6 +29135,7 @@ MonoBehaviour:
   - {fileID: 1938986684}
   - {fileID: 777481709}
   - {fileID: 681030809}
+  towerWeight: 0
 --- !u!4 &1708421239
 Transform:
   m_ObjectHideFlags: 0
@@ -28695,6 +29235,7 @@ MonoBehaviour:
   - {fileID: 1070416777}
   - {fileID: 321842374}
   - {fileID: 575744124}
+  towerWeight: 0
 --- !u!4 &1710049711
 Transform:
   m_ObjectHideFlags: 0
@@ -28863,6 +29404,7 @@ MonoBehaviour:
   - {fileID: 1860919181}
   - {fileID: 1127635559}
   - {fileID: 321842374}
+  towerWeight: 0
 --- !u!4 &1712799882
 Transform:
   m_ObjectHideFlags: 0
@@ -28962,6 +29504,7 @@ MonoBehaviour:
   - {fileID: 575744124}
   - {fileID: 806982466}
   - {fileID: 1038652768}
+  towerWeight: 0
 --- !u!4 &1713347556
 Transform:
   m_ObjectHideFlags: 0
@@ -29066,6 +29609,7 @@ MonoBehaviour:
   - {fileID: 1669894701}
   - {fileID: 1268896433}
   - {fileID: 589248366}
+  towerWeight: 0
 --- !u!4 &1752265983
 Transform:
   m_ObjectHideFlags: 0
@@ -29163,6 +29707,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1188433148}
   - {fileID: 1858652549}
+  towerWeight: 0
 --- !u!4 &1765199581
 Transform:
   m_ObjectHideFlags: 0
@@ -29260,6 +29805,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 2093839645}
   - {fileID: 1938986684}
+  towerWeight: 0
 --- !u!4 &1767919059
 Transform:
   m_ObjectHideFlags: 0
@@ -29359,6 +29905,7 @@ MonoBehaviour:
   - {fileID: 1994715569}
   - {fileID: 1990520431}
   - {fileID: 384141432}
+  towerWeight: 0
 --- !u!4 &1771910980
 Transform:
   m_ObjectHideFlags: 0
@@ -29526,6 +30073,7 @@ MonoBehaviour:
   - {fileID: 689065252}
   - {fileID: 1030071994}
   - {fileID: 497495804}
+  towerWeight: 0
 --- !u!4 &1779705344
 Transform:
   m_ObjectHideFlags: 0
@@ -29624,6 +30172,7 @@ MonoBehaviour:
   - {fileID: 1375640173}
   - {fileID: 1975470433}
   - {fileID: 1789226649}
+  towerWeight: 0
 --- !u!4 &1783684488
 Transform:
   m_ObjectHideFlags: 0
@@ -29791,6 +30340,7 @@ MonoBehaviour:
   - {fileID: 1652471521}
   - {fileID: 1783684487}
   - {fileID: 1695216566}
+  towerWeight: 0
 --- !u!4 &1789226650
 Transform:
   m_ObjectHideFlags: 0
@@ -29888,6 +30438,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1235615301}
   - {fileID: 920990396}
+  towerWeight: 0
 --- !u!4 &1789540337
 Transform:
   m_ObjectHideFlags: 0
@@ -29986,6 +30537,7 @@ MonoBehaviour:
   - {fileID: 1929000338}
   - {fileID: 1691344226}
   - {fileID: 604016970}
+  towerWeight: 0
 --- !u!4 &1791240103
 Transform:
   m_ObjectHideFlags: 0
@@ -30153,6 +30705,7 @@ MonoBehaviour:
   - {fileID: 1330873752}
   - {fileID: 258154028}
   - {fileID: 1470971137}
+  towerWeight: 0
 --- !u!4 &1797762816
 Transform:
   m_ObjectHideFlags: 0
@@ -30251,6 +30804,7 @@ MonoBehaviour:
   - {fileID: 964084424}
   - {fileID: 1669894701}
   - {fileID: 1342192073}
+  towerWeight: 0
 --- !u!4 &1813298031
 Transform:
   m_ObjectHideFlags: 0
@@ -30418,6 +30972,7 @@ MonoBehaviour:
   - {fileID: 482566831}
   - {fileID: 726734664}
   - {fileID: 1872966166}
+  towerWeight: 0
 --- !u!4 &1818924178
 Transform:
   m_ObjectHideFlags: 0
@@ -30517,6 +31072,7 @@ MonoBehaviour:
   - {fileID: 249309597}
   - {fileID: 1266617326}
   - {fileID: 1659720175}
+  towerWeight: 0
 --- !u!4 &1824995491
 Transform:
   m_ObjectHideFlags: 0
@@ -30615,6 +31171,7 @@ MonoBehaviour:
   - {fileID: 1636037712}
   - {fileID: 1330873752}
   - {fileID: 1470971137}
+  towerWeight: 0
 --- !u!4 &1828612303
 Transform:
   m_ObjectHideFlags: 0
@@ -30783,6 +31340,7 @@ MonoBehaviour:
   - {fileID: 589197705}
   - {fileID: 59647275}
   - {fileID: 681318298}
+  towerWeight: 0
 --- !u!4 &1846214947
 Transform:
   m_ObjectHideFlags: 0
@@ -30882,6 +31440,7 @@ MonoBehaviour:
   - {fileID: 1614004507}
   - {fileID: 1621748085}
   - {fileID: 1276150454}
+  towerWeight: 0
 --- !u!4 &1846435350
 Transform:
   m_ObjectHideFlags: 0
@@ -30981,6 +31540,7 @@ MonoBehaviour:
   - {fileID: 1852713242}
   - {fileID: 1948239614}
   - {fileID: 67968714}
+  towerWeight: 0
 --- !u!4 &1846609801
 Transform:
   m_ObjectHideFlags: 0
@@ -31188,6 +31748,7 @@ MonoBehaviour:
   - {fileID: 1111871399}
   - {fileID: 826307194}
   - {fileID: 1846609800}
+  towerWeight: 0
 --- !u!4 &1852713243
 Transform:
   m_ObjectHideFlags: 0
@@ -31285,6 +31846,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1765199580}
   - {fileID: 411919131}
+  towerWeight: 0
 --- !u!4 &1858652550
 Transform:
   m_ObjectHideFlags: 0
@@ -31384,6 +31946,7 @@ MonoBehaviour:
   - {fileID: 1397356770}
   - {fileID: 841328271}
   - {fileID: 1712799881}
+  towerWeight: 0
 --- !u!4 &1860919182
 Transform:
   m_ObjectHideFlags: 0
@@ -31482,6 +32045,7 @@ MonoBehaviour:
   - {fileID: 1914371191}
   - {fileID: 230691179}
   - {fileID: 1414126515}
+  towerWeight: 0
 --- !u!4 &1863720182
 Transform:
   m_ObjectHideFlags: 0
@@ -31649,6 +32213,7 @@ MonoBehaviour:
   - {fileID: 633752422}
   - {fileID: 927722391}
   - {fileID: 1918407433}
+  towerWeight: 0
 --- !u!4 &1871201956
 Transform:
   m_ObjectHideFlags: 0
@@ -31747,6 +32312,7 @@ MonoBehaviour:
   - {fileID: 1818924177}
   - {fileID: 136637808}
   - {fileID: 1326016613}
+  towerWeight: 0
 --- !u!4 &1872966167
 Transform:
   m_ObjectHideFlags: 0
@@ -31889,6 +32455,7 @@ MonoBehaviour:
   - {fileID: 384141432}
   - {fileID: 1990520431}
   - {fileID: 2047647065}
+  towerWeight: 0
 --- !u!4 &1882096844
 Transform:
   m_ObjectHideFlags: 0
@@ -31987,6 +32554,7 @@ MonoBehaviour:
   - {fileID: 202108062}
   - {fileID: 892589452}
   - {fileID: 1544590262}
+  towerWeight: 0
 --- !u!4 &1886710347
 Transform:
   m_ObjectHideFlags: 0
@@ -32085,6 +32653,7 @@ MonoBehaviour:
   - {fileID: 1644692063}
   - {fileID: 1860919181}
   - {fileID: 1070416777}
+  towerWeight: 0
 --- !u!4 &1893102580
 Transform:
   m_ObjectHideFlags: 0
@@ -32183,6 +32752,7 @@ MonoBehaviour:
   - {fileID: 1015447491}
   - {fileID: 1863720181}
   - {fileID: 249011930}
+  towerWeight: 0
 --- !u!4 &1914371192
 Transform:
   m_ObjectHideFlags: 0
@@ -32286,6 +32856,7 @@ MonoBehaviour:
   - {fileID: 1027692534}
   - {fileID: 1871201955}
   - {fileID: 267151119}
+  towerWeight: 0
 --- !u!4 &1918407434
 Transform:
   m_ObjectHideFlags: 0
@@ -32385,6 +32956,7 @@ MonoBehaviour:
   - {fileID: 1533771093}
   - {fileID: 2136972387}
   - {fileID: 1629171500}
+  towerWeight: 0
 --- !u!4 &1922731649
 Transform:
   m_ObjectHideFlags: 0
@@ -32483,6 +33055,7 @@ MonoBehaviour:
   - {fileID: 1504246055}
   - {fileID: 1791240102}
   - {fileID: 809918865}
+  towerWeight: 0
 --- !u!4 &1929000339
 Transform:
   m_ObjectHideFlags: 0
@@ -32581,6 +33154,7 @@ MonoBehaviour:
   - {fileID: 1767919058}
   - {fileID: 1708421238}
   - {fileID: 1670421565}
+  towerWeight: 0
 --- !u!4 &1938986685
 Transform:
   m_ObjectHideFlags: 0
@@ -32678,6 +33252,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 628858479}
   - {fileID: 571252147}
+  towerWeight: 0
 --- !u!4 &1947514902
 Transform:
   m_ObjectHideFlags: 0
@@ -32777,6 +33352,7 @@ MonoBehaviour:
   - {fileID: 826307194}
   - {fileID: 812833618}
   - {fileID: 1422899178}
+  towerWeight: 0
 --- !u!4 &1948239615
 Transform:
   m_ObjectHideFlags: 0
@@ -32840,6 +33416,109 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1962968155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962968156}
+  - component: {fileID: 1962968159}
+  - component: {fileID: 1962968158}
+  - component: {fileID: 1962968157}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1962968156
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962968155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1455391969}
+  m_Father: {fileID: 277322080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1962968157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962968155}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 24
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &1962968158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962968155}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1962968159
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962968155}
+  m_CullTransparentMesh: 1
 --- !u!1 &1964345428
 GameObject:
   m_ObjectHideFlags: 0
@@ -32876,6 +33555,7 @@ MonoBehaviour:
   - {fileID: 913918754}
   - {fileID: 86055381}
   - {fileID: 1621748085}
+  towerWeight: 0
 --- !u!4 &1964345430
 Transform:
   m_ObjectHideFlags: 0
@@ -33117,6 +33797,7 @@ MonoBehaviour:
   - {fileID: 1783684487}
   - {fileID: 1060042802}
   - {fileID: 1695216566}
+  towerWeight: 0
 --- !u!4 &1975470434
 Transform:
   m_ObjectHideFlags: 0
@@ -33215,6 +33896,7 @@ MonoBehaviour:
   - {fileID: 1051254158}
   - {fileID: 183667234}
   - {fileID: 112485919}
+  towerWeight: 0
 --- !u!4 &1986391264
 Transform:
   m_ObjectHideFlags: 0
@@ -33313,6 +33995,7 @@ MonoBehaviour:
   - {fileID: 720997628}
   - {fileID: 848947582}
   - {fileID: 1485774074}
+  towerWeight: 0
 --- !u!4 &1989825817
 Transform:
   m_ObjectHideFlags: 0
@@ -33412,6 +34095,7 @@ MonoBehaviour:
   - {fileID: 447751616}
   - {fileID: 1153797942}
   - {fileID: 1882096843}
+  towerWeight: 0
 --- !u!4 &1990520432
 Transform:
   m_ObjectHideFlags: 0
@@ -33511,6 +34195,7 @@ MonoBehaviour:
   - {fileID: 1376735590}
   - {fileID: 447751616}
   - {fileID: 1771910979}
+  towerWeight: 0
 --- !u!4 &1994715570
 Transform:
   m_ObjectHideFlags: 0
@@ -33608,6 +34293,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1049729855}
   - {fileID: 2007920132}
+  towerWeight: 0
 --- !u!4 &2006421588
 Transform:
   m_ObjectHideFlags: 0
@@ -33775,6 +34461,7 @@ MonoBehaviour:
   - {fileID: 2006421587}
   - {fileID: 640798069}
   - {fileID: 173600347}
+  towerWeight: 0
 --- !u!4 &2007920133
 Transform:
   m_ObjectHideFlags: 0
@@ -33874,6 +34561,7 @@ MonoBehaviour:
   - {fileID: 67968714}
   - {fileID: 1318589375}
   - {fileID: 438427264}
+  towerWeight: 0
 --- !u!4 &2016149831
 Transform:
   m_ObjectHideFlags: 0
@@ -33973,6 +34661,7 @@ MonoBehaviour:
   - {fileID: 920892228}
   - {fileID: 438427264}
   - {fileID: 909485490}
+  towerWeight: 0
 --- !u!4 &2017378200
 Transform:
   m_ObjectHideFlags: 0
@@ -34071,6 +34760,7 @@ MonoBehaviour:
   - {fileID: 447475981}
   - {fileID: 627727476}
   - {fileID: 967195548}
+  towerWeight: 0
 --- !u!4 &2021131423
 Transform:
   m_ObjectHideFlags: 0
@@ -34169,6 +34859,7 @@ MonoBehaviour:
   - {fileID: 267151119}
   - {fileID: 444465674}
   - {fileID: 1437813931}
+  towerWeight: 0
 --- !u!4 &2022843821
 Transform:
   m_ObjectHideFlags: 0
@@ -34268,6 +34959,7 @@ MonoBehaviour:
   - {fileID: 260716567}
   - {fileID: 1135787929}
   - {fileID: 1246403891}
+  towerWeight: 0
 --- !u!4 &2033070507
 Transform:
   m_ObjectHideFlags: 0
@@ -34367,6 +35059,7 @@ MonoBehaviour:
   - {fileID: 438427264}
   - {fileID: 828830091}
   - {fileID: 1058936234}
+  towerWeight: 0
 --- !u!4 &2034844782
 Transform:
   m_ObjectHideFlags: 0
@@ -34465,6 +35158,7 @@ MonoBehaviour:
   - {fileID: 44810238}
   - {fileID: 687073590}
   - {fileID: 374449782}
+  towerWeight: 0
 --- !u!4 &2044852881
 Transform:
   m_ObjectHideFlags: 0
@@ -34563,6 +35257,7 @@ MonoBehaviour:
   - {fileID: 1882096843}
   - {fileID: 1153797942}
   - {fileID: 1552055755}
+  towerWeight: 0
 --- !u!4 &2047647066
 Transform:
   m_ObjectHideFlags: 0
@@ -34661,6 +35356,7 @@ MonoBehaviour:
   - {fileID: 1610230376}
   - {fileID: 379756801}
   - {fileID: 589511373}
+  towerWeight: 0
 --- !u!4 &2054353601
 Transform:
   m_ObjectHideFlags: 0
@@ -34759,6 +35455,7 @@ MonoBehaviour:
   - {fileID: 1111871399}
   - {fileID: 1164953832}
   - {fileID: 826307194}
+  towerWeight: 0
 --- !u!4 &2079279201
 Transform:
   m_ObjectHideFlags: 0
@@ -34856,6 +35553,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 1171918323}
   - {fileID: 562806120}
+  towerWeight: 0
 --- !u!4 &2082699741
 Transform:
   m_ObjectHideFlags: 0
@@ -35022,6 +35720,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 114533484}
   - {fileID: 773963601}
+  towerWeight: 0
 --- !u!4 &2084535368
 Transform:
   m_ObjectHideFlags: 0
@@ -35121,6 +35820,7 @@ MonoBehaviour:
   - {fileID: 758981249}
   - {fileID: 172379315}
   - {fileID: 59647275}
+  towerWeight: 0
 --- !u!4 &2088839383
 Transform:
   m_ObjectHideFlags: 0
@@ -35218,6 +35918,7 @@ MonoBehaviour:
   neighbours:
   - {fileID: 979166505}
   - {fileID: 1767919058}
+  towerWeight: 0
 --- !u!4 &2093839646
 Transform:
   m_ObjectHideFlags: 0
@@ -35390,6 +36091,7 @@ MonoBehaviour:
   - {fileID: 1235615301}
   - {fileID: 1644692063}
   - {fileID: 920990396}
+  towerWeight: 0
 --- !u!4 &2105985353
 Transform:
   m_ObjectHideFlags: 0
@@ -35489,6 +36191,7 @@ MonoBehaviour:
   - {fileID: 131623350}
   - {fileID: 1994715569}
   - {fileID: 914355839}
+  towerWeight: 0
 --- !u!4 &2114890917
 Transform:
   m_ObjectHideFlags: 0
@@ -35662,6 +36365,7 @@ MonoBehaviour:
   - {fileID: 1661976901}
   - {fileID: 49303361}
   - {fileID: 123991401}
+  towerWeight: 0
 --- !u!4 &2136972388
 Transform:
   m_ObjectHideFlags: 0
@@ -36115,4 +36819,5 @@ SceneRoots:
   - {fileID: 1517868492}
   - {fileID: 1058936235}
   - {fileID: 1363358864}
-  - {fileID: 609794943}
+  - {fileID: 785983147}
+  - {fileID: 120342984}
