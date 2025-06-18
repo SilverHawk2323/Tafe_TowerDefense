@@ -72,6 +72,7 @@ public class AI_Director : MonoBehaviour
         if (wavepointIndex >= path.Count - 1)
         {
             GameManager.gm.RemoveEnemyFromList(this);
+            GameManager.gm.health -= 1;
             Destroy(gameObject);
             return;
         }

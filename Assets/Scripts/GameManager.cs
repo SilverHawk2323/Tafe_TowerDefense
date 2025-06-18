@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     public List<AI_Director>enemies = new List<AI_Director>();
     public Node start;
     public Node goal;
+    public int health;
+    public int MaxHealth = 5;
+    public bool gameOver;
+    public GameObject loseScreen;
+    public GameObject GUI;
 
     private void Awake()
     {
@@ -23,12 +28,30 @@ public class GameManager : MonoBehaviour
         {
             gm = this;
         }
+        health = MaxHealth;
+        gameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameOver)
+        {
+            Time.timeScale = 0f;
+            loseScreen.SetActive(true);
+            GUI.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            GUI.SetActive(true);
+            loseScreen.SetActive(false);
+        }
+        if (health == 0)
+        {
+            gameOver = true;
+            return;
+        }
         if(countdown <= 0)
         {
             StartCoroutine(SpawnWave());
